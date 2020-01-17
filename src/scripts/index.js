@@ -14,8 +14,17 @@ async function getResults(query) {
     const ID = '0b4f11dd';
     const KEY = '51a2d8bad09a42a5663f92fe7d234c29';
     const PROXY = '';
-    const res = await axios(`${PROXY}https://api.edamam.com/search?app_key=${KEY}app_id=${ID}&q=${query}`);
-    console.log(res.data.hits);
+
+    try{
+        const res = await axios(`${PROXY}https://api.edamam.com/search?app_key=${KEY}app_id=${ID}&q=${query}`);
+        const result = res.data.hits;
+        console.log(result);
+    }
+    catch (error) {
+        alert(error);
+    }
+
 }
 
-getResults('pizza');
+getResults('tomato pasta');
+
