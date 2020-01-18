@@ -4,6 +4,15 @@ export const getInput = () => {
     return elements.searchInput.value;
 };
 
+export const clearInput = () => {
+    return elements.searchInput.value = '';
+};
+
+export const clearResults = () => {
+    elements.searchResultList.innerHTML = '';
+};
+
+
 const renderRecipe = recipe => {
     const markup = `
     <li>
