@@ -1,7 +1,7 @@
 import styles from './../styles/styles.css';
-import SearchView from './view/SearchView';
 import Search from './models/Search';
-
+import * as searchView from './view/SearchView'
+import { elements } from './view/base';
 
 function requireAll(r) {
     r.keys().forEach(r);
@@ -20,7 +20,7 @@ const state = {};
 const controlSearch = async () =>{
 
     // - get query from the view
-    const query = 'pizza'; //TODO
+    const query = searchView.getInput();
 
     if(query){
         // new search object and add to state
@@ -38,7 +38,7 @@ const controlSearch = async () =>{
 };
 
 
-document.querySelector('.search').addEventListener('submit', e => {
+elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
 
     controlSearch();

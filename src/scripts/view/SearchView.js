@@ -1,1 +1,5 @@
-export default 'test exported string';
+import { elements } from './base';
+
+export const getInput = () => {
+    return elements.searchInput.value;
+};
