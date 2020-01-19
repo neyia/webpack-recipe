@@ -1,7 +1,7 @@
 import styles from './../styles/styles.css';
 import Search from './models/Search';
 import * as searchView from './view/SearchView'
-import {elements} from './view/base';
+import {elements,renderLoader,clearLoader} from './view/base';
 
 function requireAll(r) {
     r.keys().forEach(r);
@@ -30,10 +30,11 @@ const controlSearch = async () => {
         // loader
         searchView.clearInput();
         searchView.clearResults();
+        renderLoader(elements.searchResultLoader);
 
         //search for the recipes
         await state.search.getResults();
-
+        clearLoader();
         // render results on ui
         searchView.renderResults(state.search.result);
     }
