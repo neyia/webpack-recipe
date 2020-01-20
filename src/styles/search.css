@@ -1,0 +1,39 @@
+
+.search {
+    display: flex;
+}
+
+.search__label {
+}
+
+.search__field {
+    border: 2px solid #655A56;
+    box-sizing: border-box;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 15px;
+    width: 400px;
+    height: 40px;
+    margin: 0;
+}
+
+.btn {
+    justify-content: flex-start;
+    background: #655A56;
+    align-items: center;
+    color: #F48982;
+    border: none;
+    display: flex;
+}
+
+.search__btn {
+    height: 40px;
+    width: 140px;
+}
+
+.search__icon {
+    margin: auto 10px;
+    fill: #ffffff;
+    height: 20px;
+    width: 20px;
+}

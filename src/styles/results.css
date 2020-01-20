@@ -1,0 +1,49 @@
+
+.result-list {
+    align-items: stretch;
+    padding: 10px 0;
+    margin: 10px 0;
+    display: flex;
+}
+
+.results {
+
+}
+
+.results-item {
+    padding-bottom: 20px;
+
+}
+
+.result-item{
+    width: 50vw;
+}
+
+.results__link {
+    display: flex;
+    text-decoration: none;
+}
+
+.results__img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.results__img img {
+    width: 100%;
+    height: 100%;
+}
+
+.results__data {
+    margin-left: 10px;
+}
+
+.results__name {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.results__author {
+    color: #655A56;
+}

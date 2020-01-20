@@ -49,7 +49,30 @@ const renderRecipe = recipe => {
 };
 
 
-export const renderResults = recipes => {
+const createButtons = (page, type) => {
+    `<button type="button" class="btn btn-${type}" data-attr="${type === 'prev' ? page - 1: page + 1}"> 
+        left ${type === 'prev' ? page - 1: page + 1}
+    </button>`
+};
 
-    recipes.forEach(renderRecipe);
+const renderButtons = (page, numberResults, resultsPerPage) => {
+    const pages = Math.ceil(numberResults / resultsPerPage);
+
+    if (page === 1 && pages > 1) {
+        createButtons(page, 'next')
+    } else if (page < pages) {
+        //button next + prev
+    } else if (page === pages && pages > 1) {
+        createButtons(page, 'prev')
+    }
+    else{
+
+    }
+};
+
+export const renderResults = (recipes, page = 1, resultsPerPage = 5) => {
+    const start = (page - 1) * resultsPerPage;
+    const end = page * resultsPerPage;
+
+    recipes.slice(start, end).forEach(renderRecipe);
 };
