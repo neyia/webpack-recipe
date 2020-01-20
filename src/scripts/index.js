@@ -1,7 +1,7 @@
 import styles from './../styles/styles.css';
 import Search from './models/Search';
 import * as searchView from './view/SearchView'
-import {elements,renderLoader,clearLoader} from './view/base';
+import {elements,renderLoader,clearLoader} from './view/BasicElements';
 
 function requireAll(r) {
     r.keys().forEach(r);

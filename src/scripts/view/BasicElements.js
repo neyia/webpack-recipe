@@ -12,9 +12,7 @@ export const elementsStrings = {
 export const renderLoader = parent => {
     const loader = `
         <div class="${elementsStrings.loader}">
-            <svg>
-                <use href="icons/icons.svg#plus"></use>
-            </svg>
+            <div></div><div></div><div></div><div></div>
         </div>
     `;
     parent.insertAdjacentHTML('afterbegin', loader);
