@@ -74,7 +74,7 @@ const renderButtons = (page, numberResults, resultsPerPage) => {
         button = createButtons(page, 'prev');
     }
     else {
-        button = 'error here'
+        button = 'no recipe was found'
     }
 
     elements.searchResultsPages.insertAdjacentHTML('afterbegin', button);
