@@ -52,7 +52,7 @@ const createButtons = (page, type) => {
    return ( `
     <button type="button" class="btn btn__pagination btn-${type}" data-attr="${type === 'prev' ? page - 1 : page + 1}">
         <svg class="icon-pagination icon-pagination--${type}">
-            <use href="./icons/icons.svg#arrow"></use>
+            <use href="./../icons/icons.svg#arrow"></use>
         </svg> 
         go to page ${type === 'prev' ? page - 1 : page + 1}
     </button>`)
