@@ -6,25 +6,31 @@
 </head>
 <body>
 <div class="container">
+
     <header class="header">
-        <form class="search">
-
-            <label class="search__label">
-                <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes...">
-            </label>
-
-            <button class="btn search__btn" type="submit">
-                <svg class="search__icon">
-                    <use href="./icons/icons.svg#search"></use>
-                </svg>
-                <span>Search</span>
-            </button>
-        </form>
+        <div class="title">
+            <h1 class="title__item">Recipes example</h1>
+        </div>
     </header>
+
+    <form class="search">
+        <label class="search__label">
+            <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes...">
+        </label>
+        <button class="btn search__btn" type="submit">
+            <svg class="search__icon">
+                <use href="./icons/icons.svg#search"></use>
+            </svg>
+            <span>Search</span>
+        </button>
+    </form>
+
     <div class="result-list">
         <ul class="results"></ul>
     </div>
-    <div class="result-item"></div>
+
+    <div class="pagination"></div>
+
 </div>
 
 </body>

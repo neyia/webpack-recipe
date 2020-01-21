@@ -13,6 +13,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    min-width: 600px;
 }
 
 
@@ -26,5 +27,7 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
 }

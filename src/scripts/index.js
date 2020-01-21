@@ -1,7 +1,7 @@
 import styles from './../styles/styles.css';
 import Search from './models/Search';
 import * as searchView from './view/SearchView'
-import {elements,renderLoader,clearLoader} from './view/BasicElements';
+import {elements, renderLoader, clearLoader} from './view/BasicElements';
 
 function requireAll(r) {
     r.keys().forEach(r);
@@ -9,33 +9,20 @@ function requireAll(r) {
 
 requireAll(require.context('./../icons/', true, /\.svg$/));
 
-
-//the global state
-// - search object
-// - current recipe object
-// - shopping list object
-// - liked recipes
-
 const state = {};
 
 const controlSearch = async () => {
-
-    // - get query from the view
     const query = searchView.getInput();
 
     if (query) {
-        // new search object and add to state
         state.search = new Search(query);
 
-        // loader
         searchView.clearInput();
         searchView.clearResults();
         renderLoader(elements.searchResultLoader);
 
-        //search for the recipes
         await state.search.getResults();
         clearLoader();
-        // render results on ui
         searchView.renderResults(state.search.result);
     }
 };
@@ -43,10 +30,18 @@ const controlSearch = async () => {
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
-
     controlSearch();
 });
 
+elements.searchResultsPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn');
 
+    if (btn) {
+        const goToPage = parseInt(btn.dataset.attr, 10);
+        searchView.clearResults();
+        searchView.renderResults(state.search.result,goToPage);
+    }
+
+});
 
 
